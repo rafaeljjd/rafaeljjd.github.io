@@ -44,6 +44,8 @@ img {
 
 /* Left text */
 .left h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
   font-size: 1.8rem;
   margin-bottom: 10px;
 }
