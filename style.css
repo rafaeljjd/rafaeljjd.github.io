@@ -1,0 +1,197 @@
+/* GLOBAL */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* LEFT COLUMN (photo + name) */
+.left {
+  width: 260px;
+  min-width: 200px;
+  padding-right: 40px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 40px;        /* distance from top while scrolling */
+  align-self: flex-start;
+}
+
+/* Profile photo: hard cap like Allan's 230px */
+.profile {
+  width: 100%;
+  max-width: 230px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Left text */
+.left h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.affiliation {
+  line-height: 1.4;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.email {
+  margin-bottom: 15px;
+}
+
+.left .email a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.left .email a:hover {
+  text-decoration: underline;
+}
+
+.cv a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+/* RIGHT COLUMN (papers) */
+.right {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.right h2 {
+  font-size: 1.2rem;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+/* Paper blocks */
+.paper {
+  margin-bottom: 1.5rem; /* space between papers */
+}
+
+/* Title as <p>, not <h3> */
+.paper-title {
+  margin: 0;
+}
+
+/* Coauthors */
+.paper-coauthors {
+  margin: 0;
+  color: #777;
+}
+
+/* Make coauthor links inherit grey color and remove underline */
+.paper-coauthors a {
+  color: inherit;        /* same grey as the parent */
+  text-decoration: none; /* no underline */
+}
+
+/* Optional: underline on hover (like Allan) */
+.paper-coauthors a:hover {
+  text-decoration: underline;
+}
+
+/* Status line just under the title */
+.status {
+  margin: 0; /* kill extra vertical gap */
+}
+
+/* Links / button bar under status */
+.buttonbar,
+.links {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Optional: style for abstract text */
+.abstract {
+  font-size: 0.95rem;
+}
+
+/* Links */
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Simple button styling (like Allan's) */
+.button {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: #0056b3;
+  cursor: pointer;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.mobile-divider {
+  display: none;
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+
+/* MOBILE: stack columns and disable sticky */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+    min-width: 0;
+    padding-right: 0;
+    margin-bottom: 30px;
+    text-align: center;
+
+    position: static;     /* turn off sticky */
+    top: auto;
+    align-self: auto;
+  }
+
+  .left h1 {
+    text-align: center;
+  }
+
+  .profile {
+    max-width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mobile-divider {
+    display: block;
+  }
+
+}
